@@ -1,6 +1,8 @@
 package main
 
 import (
+	"image/color"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
@@ -8,6 +10,14 @@ import (
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
 )
+
+type pinkEntryRenderer struct {
+	fyne.WidgetRenderer
+}
+
+func (p *pinkEntryRenderer) BackgroundColor() color.Color {
+	return color.RGBA{255, 20, 147, 255}
+}
 
 func t05_addTextToList() {
 	myApp := app.New()

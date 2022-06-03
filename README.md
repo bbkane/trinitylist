@@ -22,6 +22,21 @@ Ooh I can use a form... https://developer.fyne.io/explore/layouts
 
 We can try https://developer.fyne.io/api/v2.1/widget/entry.html#func-entry-typedkey
 
+That didn't work, but adding OnSubmit did. Odd that it's not documented.
+
+Done in 479d5bc
+
+## Adding Color to list entries
+
+This looks harder, so let's try it first...
+
+Trying: https://github.com/fyne-io/fyne/issues/619
+
+Per https://gophers.slack.com/archives/CB4QUBXGQ/p1654222862590979 , I can use https://blogvali.com/button-color-background-image-fyne-gui-golang-tutorial-44/
+
+## Editing existing list entries
+
+
 
 # Issues to create
 
