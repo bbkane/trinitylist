@@ -5,6 +5,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/data/binding"
 	"fyne.io/fyne/v2/layout"
@@ -30,14 +31,24 @@ func t05_addTextToList() {
 	todosListData := binding.BindStringList(
 		&[]string{"Item 1", "Item 2", "Item 3"},
 	)
+
 	list := widget.NewListWithData(
 		todosListData,
 		func() fyne.CanvasObject {
-			return widget.NewLabel("template")
+			btn_color := canvas.NewRectangle(
+				color.NRGBA{R: 0, G: 255, B: 0, A: 255})
+			btn_container := container.New(
+				layout.NewMaxLayout(),
+				btn_color,
+				widget.NewLabel(""), // second object in container
+			)
+			return btn_container
 		},
 		func(i binding.DataItem, o fyne.CanvasObject) {
-			o.(*widget.Label).Bind(i.(binding.String))
-		})
+			// The second item is the label (see add func above)
+			o.(*fyne.Container).Objects[1].(*widget.Label).Bind(i.(binding.String))
+		},
+	)
 
 	addToList := func() {
 		newItem, err := todoInputData.Get()

@@ -5,6 +5,6 @@ func main() {
 	// bindingSimpleWidgets()
 	// dataConversion()
 	// f04_listData()
-	// t05_addTextToList()
-	d06_buttonColor()
+	t05_addTextToList()
+	// d06_buttonColor()
 }
