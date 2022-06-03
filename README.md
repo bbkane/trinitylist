@@ -8,9 +8,6 @@ Demo: https://github.com/fyne-io/fyne/tree/master/cmd/fyne_demo
 
 List binding: https://developer.fyne.io/binding/list
 
-
-# TODO
-
 ## Input stretching
 
 Now I'm trying to make the text input stretch acroos the bottom part
@@ -20,6 +17,11 @@ try https://developer.fyne.io/container/box
 also see https://www.youtube.com/watch?v=LWn1403gY9E
 
 Ooh I can use a form... https://developer.fyne.io/explore/layouts
+
+## Attaching Enter to input
+
+We can try https://developer.fyne.io/api/v2.1/widget/entry.html#func-entry-typedkey
+
 
 # Issues to create
 

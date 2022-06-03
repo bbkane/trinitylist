@@ -12,7 +12,7 @@ import (
 func t05_addTextToList() {
 	myApp := app.New()
 
-	win := myApp.NewWindow("List Data")
+	win := myApp.NewWindow("TODOs")
 	win.Resize(fyne.NewSize(600, 600))
 
 	todoInputData := binding.BindString(ptr("hi"))
@@ -29,13 +29,14 @@ func t05_addTextToList() {
 			o.(*widget.Label).Bind(i.(binding.String))
 		})
 
-	addBtn := widget.NewButton("Add", func() {
+	addToList := func() {
 		newItem, err := todoInputData.Get()
 		if err != nil {
 			fyne.LogError("Can't get todoInput", err)
 		}
 		todosListData.Append(newItem)
-	})
+	}
+	addBtn := widget.NewButton("Add", addToList)
 
 	win.SetContent(
 		container.NewBorder(
@@ -43,9 +44,11 @@ func t05_addTextToList() {
 			container.New(
 				layout.NewFormLayout(),
 				addBtn,
-				// widget.NewEntryWithData(
-				// 	todoInputData,
-				// ),
+				func() *widget.Entry {
+					wgt := widget.NewEntryWithData(todoInputData)
+					wgt.OnSubmitted = func(s string) { addToList() }
+					return wgt
+				}(),
 			),
 			nil,
 			nil,
