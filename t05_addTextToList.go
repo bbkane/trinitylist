@@ -12,25 +12,15 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-type pinkEntryRenderer struct {
-	fyne.WidgetRenderer
-}
-
-func (p *pinkEntryRenderer) BackgroundColor() color.Color {
-	return color.RGBA{255, 20, 147, 255}
-}
-
 func t05_addTextToList() {
-	myApp := app.New()
+	myApp := app.NewWithID("bbkane.com/TODOs")
 
 	win := myApp.NewWindow("TODOs")
 	win.Resize(fyne.NewSize(600, 600))
 
 	todoInputData := binding.BindString(ptr("hi"))
 
-	todosListData := binding.BindStringList(
-		&[]string{"Item 1", "Item 2", "Item 3"},
-	)
+	todosListData := binding.NewStringList()
 
 	list := widget.NewListWithData(
 		todosListData,

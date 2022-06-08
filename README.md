@@ -34,13 +34,22 @@ Trying: https://github.com/fyne-io/fyne/issues/619
 
 Per https://gophers.slack.com/archives/CB4QUBXGQ/p1654222862590979 , I can use https://blogvali.com/button-color-background-image-fyne-gui-golang-tutorial-44/
 
+Done in ccc80e0
+
 ## Editing existing list entries
 
+This is gonna use bindstruct... I'm going to have to
 
+https://github.com/search?q=binding.BindStruct&type=code
+
+## List of Structs questions
+
+I need to write a list of questions about how to bind structs...
+
+Examples of using BindStruct with lists
+
+Should I regen the list and repaint all widgets each time? Perf?
 
 # Issues to create
 
-Link to demo code in https://fyne.io/ , https://developer.fyne.io/started/#run-the-demo
-
 Add binding to struct
-

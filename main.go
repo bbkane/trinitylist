@@ -7,4 +7,5 @@ func main() {
 	// f04_listData()
 	t05_addTextToList()
 	// d06_buttonColor()
+	// t07_bindStruct()
 }
