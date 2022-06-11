@@ -53,3 +53,5 @@ Should I regen the list and repaint all widgets each time? Perf?
 # Issues to create
 
 Add binding to struct
+
+# Steal ideas from Orgzly
